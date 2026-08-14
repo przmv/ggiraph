@@ -69,6 +69,22 @@ export default class FullscreenHandler {
       .append('div')
       .attr('class', 'ggiraph-fullscreen-content');
 
+    // Size the container after the svg aspect ratio, so that the whole
+    // graphic fits in the viewport whatever the ratio is. Without a
+    // definite width and height, the percentage sizes set on the svg
+    // below cannot be resolved and browsers disagree on the result.
+    const viewBox = svgElement.viewBox && svgElement.viewBox.baseVal;
+    if (viewBox && viewBox.width > 0 && viewBox.height > 0) {
+      const ratio = viewBox.width / viewBox.height;
+      content
+        .style('aspect-ratio', String(ratio))
+        .style(
+          'width',
+          'min(calc(92vw - 40px), calc((92vh - 40px) * ' + ratio + '))'
+        )
+        .style('height', 'auto');
+    }
+
     // Add close button
     content
       .append('button')

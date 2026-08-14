@@ -1,3 +1,11 @@
+# ggiraph 0.9.7
+
+## Issues
+
+- The fullscreen modal is now sized after the graphic aspect ratio, so that
+graphics of any `width_svg`/`height_svg` are displayed entirely, whatever the
+browser (#354).
+
 # ggiraph 0.9.6
 
 ## Issues
