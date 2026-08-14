@@ -23,7 +23,7 @@ match_family("sans")
 match_family("serif")
 }
 \seealso{
-Other functions for font management: 
-\code{\link{validated_fonts}()}
+Other functions for font management:
+\code{\link[=validated_fonts]{validated_fonts()}}
 }
 \concept{functions for font management}
